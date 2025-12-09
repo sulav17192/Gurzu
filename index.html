@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone the Instagram UI with HTML and CSS (no JS) </title>
+</head>
+<body>
+    
+    <h1>Clone the Instagram UI with HTML <br> CSS (No JS)</h1>
+    <br>
+    <p>Instagram has one of the most recognizable and polished UIs on the web: a  <br>clean 
+        feed, familiar icons, and a mobile-first layout that feels natural on any <br> screen. 
+        Rebuilding this kind of interface is a great way to sharpen your <br>HTML and CSS skills.</p>
+
+        <br>
+
+        <p>In this tutorial, you’ll learn how to <b>clone a simplified Instagram-style UI <br>
+            using only HTML and CSS — no JavaScript at all.</b>We’ll focus entirely on <br>
+             layout, typography, spacing, and responsive design to create a static but <br>
+              realistic interface.</p> <br>
+
+              <p>By the end, you will have:</p>
+             <ul>
+                <li> <b>A mobile-first Instagram-style layout </b>with:</li>
+                <li>A top navigation bar (logo + action icons)</li>
+                <li>A stories bar with circular story avatars</li>
+                <li>A feed section with posts (user info, image, actions, likes, caption, comments)</li>
+                <li>A bottom navigation bar similar to the Instagram app</li>
+                <li>A responsive design that scales nicely from mobile to desktop using <b>Flexbox</b> and <b>CSS Grid.</b></li>
+                <li>Clean, reusable CSS utility classes for spacing, alignment, and colors.</li>
+             </ul>
+
+             <h3>What we won’t cover</h3>
+             <p>To keep this tutorial focused on HTML and CSS: <br> <br>We’ll use <b>placeholder images,
+                 icons, and static text </b>to simulate a real feed. <br> The goal is to master <b>structure and 
+                 styling,</b> not functionality.</p>
+
+                 <h3>Who is this tutorial for?</h3>
+                 <p>This tutorial is perfect if you:</p>
+                 <ul><li>Know basic HTML and CSS and want to build a realistic UI.</li>
+                    <li>Want to practice using <b>Flexbox</b> and <b>responsive design</b> with a real-world layout.</li>
+                    <li>Are looking for a project to add to your front-end portfolio.</li>
+                 </ul>
+                 
+<h3>What you’ll need</h3>
+<p>Before you start, you should be comfortable with:</p>
+<p>A simple <b>code editor </b> (VS Code, Sublime, etc.) and a <b>modern browser </b><br>(Chrome, Firefox, Edge, Safari) are enough.</p>       
+          
+            <h3>Project Overview — What We’re Building (Mobile-First UI)</h3>
+            <p>Before writing any code, let’s take a clear look at the layout we’re <br>
+                 going to build. Instagram is designed mobile-first, and that’s exactly <br>
+                 how we’ll approach this tutorial: we’ll begin with a compact mobile layout, <br>
+                 then scale it up for larger screens.</p>
+                 <p>Below is a breakdown of the key UI sections we’ll recreate-purely with HTML <br>
+                    and CSS, no JavaScript.</p>
+                    <ol>
+                        <li> <h3> Top Navigation Bar</h3></li>
+                        <p>A minimal header similar to Instagram’s mobile app:</p>
+                        <p>We’ll include icons using a free CDN (e.g., Remix Icon or Font Awesome).</p>
+                        <li><h3>Stories Bar</h3></li>
+                        <p>A horizontally scrollable row of <b>circular profile bubbles:</b></p>
+                        <p>We’ll simulate stories with placeholder images.</p>
+                        <li><h3>Feed Posts (The Main Content)</h3></li>
+                        <p>Each post in the feed will include:</p>
+                        <h2>Post Header</h2>
+                        <h2>Post Image</h2>
+                        <h2>Post Details</h2>
+                        <p>We’ll style these to mimic Instagram’s spacing, fonts, and alignment.</p>
+                        <li><h3>Bottom Navigation Bar</h3></li>
+                        <p>A fixed bottom bar similar to Instagram’s mobile app:</p>
+                        <p>This will remain visible as users “scroll” the page (although our page is static).</p>
+                        <li><h3>Utility & Global Styles</h3></li>
+                        <p>We’ll also create:</p>
+                        <ul>
+                            <li>A simple CSS reset</li>
+                            <li>A color system</li>
+                            <li>Reusable utility classes (margin, padding, rounded images, flex helpers)</li>
+                            <li>A consistent font (Instagram uses Roboto and Proxima Nova, we’ll use Inter or Roboto)</li>
+                        </ul>
+                        <p>This helps keep the code clean and maintainable.</p>
+                        <li><h3>Responsiveness</h3></li>
+                        <p>Although Instagram is primarily mobile, we’ll ensure:</p>
+                        <p>The core layout will rely on Flexbox, CSS Grid, and media queries.</p>
+                    </ol>
+                    <h3> Final Result</h3>
+                    <p>By the end of this tutorial, you will have:</p>
+                    <ul>
+                        <li>A <b>pixel-perfect Instagram-like UI clone</b>, fully static</li>
+                        <li>Clean, semantic HTML</li>
+                        <li>Modern CSS with mobile-first responsive design</li>
+                        <li>A project you can proudly include in your portfolio</li>
+                    </ul>
+                     
+                    <h3>Setting Up the Project (Files, Fonts, Colors, CSS Reset)</h3>
+                    <p>Before we start building the Instagram UI clone, let’s prepare our project <br>
+                         structure and core styling foundation. Keeping things organized from the start <br>
+                          will make the rest of the tutorial much easier.
+</p>
+<ol>
+    <li><h3>Project Structure</h3></li>
+    <p>Create a new folder for the project:</p>
+    <ul>
+        <li>index.html → Main HTML file</li>
+        <li>styles.css → All your CSS styles</li>
+        <li>/assets → Images for stories and posts (you can use placeholders from Unsplash or Lorem Picsum)
+</li>
+    </ul>
+    <li><h3>Adding Google Fonts</h3></li>
+    <p>Instagram uses clean, modern fonts. We’ll use Inter, which looks great and is free.</p>
+    <p>Add this inside <head> of index.html:</p>
+    <li><h3>Define Colors and Theme Variables</h3></li>
+    <p>In styles.css, start by creating CSS variables for consistent styling:</p>
+    <p>These values mimic Instagram’s color scheme.</p>
+    <li><h3>Minimal CSS Reset</h3></li>
+    <p>Apply a reset to ensure consistency across browsers:</p>
+    <li><h3>Global Layout Settings</h3></li>
+    <p>Add basic utility classes to save time later:</p>
+    <p>You’ll use these repeatedly for nav bars, story bubbles, feed headers, etc.</p>
+    <li><h3>Basic HTML Structure</h3></li>
+    <p>Inside index.html, start with a simple shell:</p>
+    <p>This sets up the skeleton for the UI we will flesh out in the next sections.</p>
+    <p>The top navigation bar is one of Instagram’s most recognizable UI elements. It’s clean, <br>
+        minimal, and always visible. In this section, we’ll build a simple, mobile-first version using only HTML and CSS.</p>
+</ol>
+</div>
+<h3> What We’re Building</h3>
+<p>The top nav will look like this:</p>
+<p>Left side → Logo (we’ll use text for simplicity) <br>
+Right side → Icons (Add, Like, Messages)</p>
+<p>We will use Remix Icon, a free icon set that loads via CDN.</p>
+<ol>
+    <li><h3> Add Remix Icon CDN</h3></li>
+    <p>Place this inside your head</p>
+    <li><h3>HTML Structure for the Top Nav</h3></li>
+    <p>Inside your header class="top-nav":</p>
+    <li><h3>Style the Navigation Bar</h3></li>
+    <p>Add this to styles.css to match Instagram's spacing and layout:</p>
+    <li><h3>Make Icons Interactive (Hover Effect)</h3></li>
+    <p>Even though we aren’t using JS, CSS hover states add polish:</p>
+    <li><h3>Optional: Instagram Script Logo (Alternative)</h3></li>
+    <p>If you want a logo closer to the real Instagram script:</p>
+</ol>
+<h3>Top Navigation Completed</h3>
+<p>You now have:</p>
+<h3>Creating the Stories Bar (Story Bubbles Row)</h3>
+<p>The Stories bar is one of the signature UI elements of Instagram. It’s a horizontal list <br>
+     of circular profile images with gradient borders and small usernames underneath. <br>
+      Even without JavaScript, we can replicate the look and feel perfectly using HTML + CSS.</p>
+      <h3>What We’re Building</h3>
+      <p>A horizontal bar that looks like this:</p>
+      <p>Each bubble:</p>
+      <p>Let’s build it step by step.</p> 
+    <ol>
+        <li><h3>HTML Structure for Stories</h3></li>
+        <p>You can add more as needed.</p>
+        <li><h3>Basic Layout Styles</h3></li>
+        <p>This makes the stories scroll horizontally on mobile (like the real Instagram app).</p>
+        <li><h3>Story Image Styles</h3></li>
+        <p>This creates the signature Instagram gradient ring.</p>
+        <li><h3>Special Style for “Your Story”</h3></li>
+        <p>Your own story usually has no gradient ring. Instead, it uses a simple gray border:</p>
+        <li><h3>Username Text Style</h3></li>
+        <p>This ensures long usernames don’t break the layout.</p>
+        <li><h3>Optional: Hide Scrollbar on Mobile Devices</h3></li>
+        <p>This gives a cleaner Instagram-like look.</p>
+    </ol> 
+    <h3>Stories Section Completed</h3>
+        <p>You now have:</p>
+    <h3>Building the Feed Card (Header, Image, Actions, Likes, Caption, Comments)</h3>
+<p>The feed card is the heart of the Instagram UI. Each post follows the same structure:</p>
+    <p>We’ll build this step-by-step using HTML and CSS.</p>
+    <ol>
+        <li><h3>HTML Structure for a Feed Post</h3></li>
+        <p>You can duplicate this post block later to add more posts.</p>
+        <li><h3>Post Container Styles</h3></li>
+        <p>Add to styles.css:</p>
+        <li><h3>Post Header Styles</h3></li>
+        <li><h3>Post Image Styling</h3></li>
+        <p>If you want fixed height like Instagram’s square posts:</p>
+        <li><h3>Action Row Styles</h3></li>
+        <li><h3>Likes Section</h3></li>
+        <li><h3>Caption Section</h3></li>
+        <li><h3>Comments Preview</h3></li>
+        <li><h3>Timestamp Style</h3></li>
+    </ol>
+    <h3>Feed Card Completed</h3>
+    <p>This project is more than just a clone — it’s a complete exercise in layout,<br>
+        spacing, typography, and responsive design, which are the foundation of all modern <br>
+        UI development.</p>
+        <p>With this skillset, you’re now prepared to build clean,
+             complex interfaces that work beautifully across all devices.</p>
+<p>You can get the full source code on our <a href="https://github.com/sulav17192" target="_blank">Github</a></p>
+<p>That’s just the basics. If you need more deep learning about CSS, SASS, SCSS, TailwindCSS, you can take the following cheap course:</p>  
+<p>Thanks!</p>
+<p>Originally published at <a href="https://www.djamware.com." target="_blank">https://www.djamware.com.</a></p>  
+</body>
+</html>
