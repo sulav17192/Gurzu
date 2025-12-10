@@ -1,0 +1,29 @@
+.feedback .label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.feedback .input,
+.feedback .textarea {
+    display: inline-block;
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.feedback .textarea {
+    height: 60px;
+}
+
+.feedback .radio {
+    margin-right: 5px;
+}
+
+.feedback .button {
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}

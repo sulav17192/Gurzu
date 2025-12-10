@@ -1,0 +1,105 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+    line-height: 1.5;
+}
+
+
+a {
+    text-decoration: none;
+    color: #262626;
+}
+
+a:hover {
+    color: #0095f6;
+    text-decoration: underline;
+}
+
+
+
+
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    /* text-align: center; */
+}
+
+.heading-1 {
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 1rem;
+    color: #6ca9f8;
+}
+
+.heading-2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: #6ca9f8;
+}
+
+.heading-3 {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #6ca9f8;
+}
+
+
+.text {
+    margin-bottom: 1rem;
+    color: #5a5a5a;
+    text-align: left;
+    font-size: 19px;
+}
+
+.list-item {
+    margin-bottom: 0.5rem;
+    font-size: 19px;
+    color: #5a5a5a;
+}
+
+.button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #0095f6;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0073e6;
+}
+
+.input, .textarea, .radio {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 80px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+}
