@@ -24,10 +24,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
-
-
 h1, h2, h3, h4 {
     font-weight: 600;
     /* text-align: center; */
@@ -35,7 +31,7 @@ h1, h2, h3, h4 {
 
 .heading-1 {
     text-align: center;
-    font-size: 64px;
+    font-size: 40px;
     margin-bottom: 1rem;
     color: #6ca9f8;
 }
