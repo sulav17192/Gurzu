@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="./assets/feedback.css">
     <link rel="stylesheet" href="./assets/success.css">
     <link rel="stylesheet" href="./assets/nav.css">
+    <link rel="stylesheet" href="./assets/gallery.css">
+    <link rel="stylesheet" href="./assets/footer.css">
 </head>
 <body>
 
+    <!-- Header/ navigation section -->
     <section class="navbar_section">
         <nav class="navbar">
             <div class="logo">
@@ -37,9 +40,9 @@
 
 
 
+<!-- Hero-Section -->
 
-
-
+<section class="Hero-section">
     <section class="intro">
     <div class="intro__content">
         <h1 class="heading-1">Clone the Instagram UI with HTML CSS (No JS)</h1>
@@ -66,29 +69,6 @@
     </div>
 </section>
 
-           
-<section class="tutorial-info">
-    <div class="tutorial-info__content">
-
-        <h3 class="heading-3">What We Won’t Cover</h3>
-        <p class="text">
-            To keep this tutorial focused on HTML and CSS...
-        </p>
-
-        <h3 class="heading-3">Who Is This Tutorial For?</h3>
-        <ul class="list">
-            <li class="list-item">Beginners in HTML/CSS</li>
-            <li class="list-item">People practicing Flexbox & responsive design</li>
-            <li class="list-item">Developers looking for a portfolio project</li>
-        </ul>
-
-        <h3 class="heading-3">What You’ll Need</h3>
-        <p class="text">
-            A code editor + modern browser is enough.
-        </p>
-
-    </div>
-</section>
         <section class="overview">
     <div class="overview_content">     
         <h3 class="heading-3">Project Overview — What We’re Building (Mobile-First UI)</h3>
@@ -127,101 +107,6 @@
     </div>  
 </section>
 
-<section class="final">
-    <div class="final_thought">
-        <h3 class="heading-3">Final Result</h3>
-        <p class="text">By the end of this tutorial, you will have:</p>
-        <ul class="list">
-            <li class="list-item">A <b>pixel-perfect Instagram-like UI clone</b>, fully static</li>
-            <li class="list-item">Clean, semantic HTML</li>
-            <li class="list-item">Modern CSS with mobile-first responsive design</li>
-            <li class="list-item">A project you can proudly include in your portfolio</li>
-        </ul>   
-    </div>
-</section>
-                
-   <section class="setup">
-    <div class="setup_content">
-        <h3 class="heading-3">Setting Up the Project (Files, Fonts, Colors, CSS Reset)</h3>
-        <p class="text">Before we start building the Instagram UI clone, let’s prepare our project 
-            structure and core styling foundation. Keeping things organized from the start 
-            will make the rest of the tutorial much easier.
-        </p>
-        <ol class="ordered-list">
-            <li class="list-item"><h3 class="heading-3">Project Structure</h3></li>
-            <p class="text">Create a new folder for the project:</p>
-            <ul class="list">
-                <li class="list-item">index.html → Main HTML file</li>
-                <li class="list-item">styles.css → All your CSS styles</li>
-                <li class="list-item">/assets → Images for stories and posts (you can use placeholders from Unsplash or Lorem Picsum)</li>
-            </ul>
-            <li class="list-item"><h3 class="heading-3">Adding Google Fonts</h3></li>
-            <p class="text">Instagram uses clean, modern fonts. We’ll use Inter, which looks great and is free.</p>
-            <p class="text">Add this inside <head> of index.html:</p>
-            <li class="list-item"><h3 class="heading-3">Define Colors and Theme Variables</h3></li>
-            <p class="text">In styles.css, start by creating CSS variables for consistent styling:</p>
-            <p class="text">These values mimic Instagram’s color scheme.</p>
-            <li class="list-item"><h3 class="heading-3">Minimal CSS Reset</h3></li>
-            <p class="text">Apply a reset to ensure consistency across browsers:</p>
-            <li class="list-item"><h3 class="heading-3">Global Layout Settings</h3></li>
-            <p class="text">Add basic utility classes to save time later:</p>
-            <p class="text">You’ll use these repeatedly for nav bars, story bubbles, feed headers, etc.</p>
-            <li class="list-item"><h3 class="heading-3">Basic HTML Structure</h3></li>
-            <p class="text">Inside index.html, start with a simple shell:</p>
-            <p class="text">This sets up the skeleton for the UI we will flesh out in the next sections.</p>
-            <p class="text">The top navigation bar is one of Instagram’s most recognizable UI elements. It’s clean,
-                minimal, and always visible. In this section, we’ll build a simple, mobile-first version using only HTML and CSS.</p>
-        </ol>
-    </div>
-</section>
-
-
-<section class="build">
-    <div class="build_content">
-        <h3 class="heading-3">What We’re Building</h3>
-        <p class="text">The top nav will look like this:</p>
-        <p class="text">Left side → Logo (we’ll use text for simplicity)
-        Right side → Icons (Add, Like, Messages)</p>
-        <p class="text">We will use Remix Icon, a free icon set that loads via CDN.</p>
-        <ol class="ordered-list">
-            <li class="list-item"><h3 class="heading-3">Add Remix Icon CDN</h3></li>
-            <p class="text">Place this inside your head</p>
-            <li class="list-item"><h3 class="heading-3">HTML Structure for the Top Nav</h3></li>
-            <p class="text">Inside your header class="top-nav":</p>
-            <li class="list-item"><h3 class="heading-3">Style the Navigation Bar</h3></li>
-            <p class="text">Add this to styles.css to match Instagram's spacing and layout:</p>
-            <li class="list-item"><h3 class="heading-3">Make Icons Interactive (Hover Effect)</h3></li>
-            <p class="text">Even though we aren’t using JS, CSS hover states add polish:</p>
-            <li class="list-item"><h3 class="heading-3">Optional: Instagram Script Logo (Alternative)</h3></li>
-            <p class="text">If you want a logo closer to the real Instagram script:</p>
-        </ol>
-    </div>
-</section>
-
-
-<section class="feed_card">
-    <div class="feed_cart_content">
-        <h3 class="heading-3">Building the Feed Card (Header, Image, Actions, Likes, Caption, Comments)</h3>
-        <p class="text">The feed card is the heart of the Instagram UI. Each post follows the same structure:</p>
-        <p class="text">We’ll build this step-by-step using HTML and CSS.</p>
-        <ol class="ordered-list">
-            <li class="list-item"><h3 class="heading-3">HTML Structure for a Feed Post</h3></li>
-            <p class="text">You can duplicate this post block later to add more posts.</p>
-            <li class="list-item"><h3 class="heading-3">Post Container Styles</h3></li>
-            <p class="text">Add to styles.css:</p>
-            <li class="list-item"><h3 class="heading-3">Post Header Styles</h3></li>
-            <li class="list-item"><h3 class="heading-3">Post Image Styling</h3></li>
-            <p class="text">If you want fixed height like Instagram’s square posts:</p>
-            <li class="list-item"><h3 class="heading-3">Action Row Styles</h3></li>
-            <li class="list-item"><h3 class="heading-3">Likes Section</h3></li>
-            <li class="list-item"><h3 class="heading-3">Caption Section</h3></li>
-            <li class="list-item"><h3 class="heading-3">Comments Preview</h3></li>
-            <li class="list-item"><h3 class="heading-3">Timestamp Style</h3></li>
-        </ol>
-        <h3 class="heading-3">Feed Card Completed</h3>
-    </div>
-</section>
-
 
    <section class="final_thought">
     <div class="final_thought_content">
@@ -237,7 +122,32 @@
       </div>
     </section>
 
+</section>
 
+
+ <!-- Gallery section -->
+    <section class="gallery">
+        <h3 class="heading-3">Gallery</h3>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="./assets/Images/img1.webp" alt="Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="./assets/Images/img2.webp" alt="Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="./assets/Images/img3.webp" alt="Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="./assets/Images/img4.webp" alt="Image 4">
+            </div>
+        </div>
+    </section>
+
+
+<!-- Feature section -->
+
+<section class="Feature-section">
       <section class="feedback">
     <form class="form" action="Feedback">
         <div class="form-group">
@@ -274,6 +184,7 @@
 </section>
 
 
+
 <section class="success-stories">
   <h2>Other Web Application Development Success Stories</h2>
   <div class="stories-container">
@@ -291,6 +202,20 @@
     </div>
   </div>
 </section>
+</section>
+
+
+<!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h3 class="heading-3">Contact</h3>
+                <p class="text">Email: info@blog.com</p>
+                <p class="text">Phone: 123456789</p>
+            </div>
+        </div>
+        <p class="footer-bottom">2025 Blog Page. All Rights Reserved.</p>
+    </footer>
 
 
 </body>

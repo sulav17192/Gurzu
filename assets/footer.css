@@ -1,0 +1,36 @@
+.footer {
+    background-color: #262626;
+    color: #fafafa;
+    padding:4px;
+}
+
+.footer-container {
+    max-width: 1024px;
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.footer h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #6ca9f8;
+}
+
+.footer p{
+    font-size: 1rem;
+    color: #dcdcdc;
+    line-height: 1.6    ;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
