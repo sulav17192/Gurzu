@@ -1,7 +1,7 @@
 .footer {
     background-color: #262626;
-    color: #fafafa;
-    padding:4px;
+    /* padding:4px; */
+
 }
 
 .footer-container {
@@ -9,7 +9,7 @@
     margin: 2px;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 8px;
     justify-content: space-between;
 }
 
