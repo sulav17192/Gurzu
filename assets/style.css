@@ -11,6 +11,7 @@ body {
     background-color: #fafafa;
     color: #262626;
     line-height: 1.5;
+    min-width: 320px;
 }
 
 
