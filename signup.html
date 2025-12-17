@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+input {
+    display: block;
+    margin: 5px 0 15px;
+    padding: 8px;
+    width: 100%;
+}
+</style>
+<body>
+    
+ <form id="signupForm" action="/submit" >
+        <h2>Signup</h2>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <span id="nameError" style="color: red;"></span>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <span id="emailError" style="color: red;"></span>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your password" required>
+        <span id="passwordError" style="color: red;"></span>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+<script>
+
+   const form= document.getElementById('signupForm');
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('passwordError').textContent = '';
+
+   const name= document.getElementById('name').value;
+   const email= document.getElementById('email').value;
+   const password= document.getElementById('password').value;
+
+   let isValid= true;
+
+   const nameRegex= /^[a-zA-Z ]{2,30}$/;
+   const emailRegex= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+
+    if (!nameRegex.test(name)) {
+        document.getElementById('nameError').textContent = "Please enter a valid name.";
+        isValid = false;
+    }
+
+    if (!emailRegex.test(email)) {
+        document.getElementById('emailError').textContent = "Please enter a valid email address.";
+        isValid = false;
+    }
+
+    if (!passwordRegex.test(password)) {
+        document.getElementById('passwordError').textContent = "Password must be at least 6 characters long.";
+        isValid = false;
+    }
+
+    if(isValid){
+        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('password', password)
+
+        alert("signup successfull!!");
+    }
+    });
+
+
+</script>
+</html>
