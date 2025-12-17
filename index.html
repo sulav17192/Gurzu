@@ -33,6 +33,7 @@
          <div class="nav-buttons">
             <button class="primary">Login</button>
             <button class="secondary">Sign Up</button>
+            <button class="primary" id="theme-toggle">Change Theme</button>
         </div>
 
         </nav>
@@ -219,4 +220,23 @@
 
 
 </body>
+
+
+<script>
+    const toggleBtn= document.getElementById("theme-toggle");
+    const root= document.documentElement;
+
+    const savedTheme= localStorage.getItem("theme");
+    if(savedTheme){
+        root.setAttribute("data-theme", savedTheme);
+    }
+
+    toggleBtn.addEventListener("click", () =>{
+        const currentTheme= root.getAttribute("data-theme");
+        const newTheme= currentTheme==="dark"?"light": "dark";
+
+        root.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+    });
+</script>
 </html>
