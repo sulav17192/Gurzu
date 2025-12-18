@@ -1,160 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-step Form</title>
+<link rel="stylesheet" href="./assets/form-style.css">
 </head>
- <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --primary: #0095f6;
-            --primary-hover: #0073e6;
-            --border: #dbdbdb;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        form {
-            width: 100%;
-            max-width: 420px;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background-color: #fff;
-        }
-
-        form h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #6ca9f8;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        label {
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
-            display: block;
-            color: var(--muted);
-        }
-
-        input {
-            width: 100%;
-            font-family: inherit;
-            font-size: 1rem;
-            padding: 0.6rem 0.7rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            margin-bottom: 0.3rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        span {
-            display: block;
-            min-height: 16px;
-            font-size: 0.85rem;
-            color: var(--error);
-            margin-bottom: 0.8rem;
-        }
-
-        input[type="submit"] {
-            margin-top: 0.5rem;
-            background-color: var(--primary);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        input[type="submit"]:hover {
-            background-color: var(--primary-hover);
-        }
-    </style>
 <body>
-    
- <form id="signupForm" action="/submit" >
-        <h2>Signup</h2>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
-        <span id="nameError" style="color: red;"></span>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
-        <span id="emailError" style="color: red;"></span>
+<div class="form-container">
+  <form id="multiStepForm" >
+    <!-- Step 1: Basic Information -->
+    <div class="form-step active">
+      <h2>Step 1: Basic Information</h2>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Your password" required>
-        <span id="passwordError" style="color: red;"></span>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <small class="error"></small>
+      </div>
 
-        <input type="submit" value="Sign Up">
-    </form>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <small class="error"></small>
+      </div>
+
+      <button type="button" class="next-btn button">Next</button>
+    </div>
+
+    <!-- Step 2: Address -->
+    <div class="form-step">
+      <h2>Step 2: Address</h2>
+
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required />
+        <small class="error"></small>
+      </div>
+
+
+      <div style="display:flex; justify-content:flex-start; gap:1rem;">
+        <button type="button" class="prev-btn button">Previous</button>
+        <button type="button" class="next-btn button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Qualification -->
+    <div class="form-step">
+      <h2>Step 3: Qualification</h2>
+
+      <div class="form-group">
+        <label for="qualification">Highest Qualification:</label>
+        <input type="text" id="qualification" name="qualification" required />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year of Passing:</label>
+        <input type="number" id="year" name="year" required />
+        <small class="error"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="university">University/College:</label>
+        <input type="text" id="university" name="university" required />
+        <small class="error"></small>
+      </div>
+
+      <div style="display:flex; justify-content:flex-start; gap:1rem;">
+        <button type="button" class="prev-btn button">Previous</button>
+        <button type="submit" class="button">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<script src="script.js"></script>
 </body>
-<script>
-
-   const form= document.getElementById('signupForm');
-
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-
-    document.getElementById('nameError').textContent = '';
-    document.getElementById('emailError').textContent = '';
-    document.getElementById('passwordError').textContent = '';
-
-   const name= document.getElementById('name').value;
-   const email= document.getElementById('email').value;
-   const password= document.getElementById('password').value;
-
-   let isValid= true;
-
-   const nameRegex= /^[a-zA-Z ]{2,30}$/;
-   const emailRegex= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-
-
-    if (!nameRegex.test(name)) {
-        document.getElementById('nameError').textContent = "Please enter a valid name.";
-        isValid = false;
-    }
-
-    if (!emailRegex.test(email)) {
-        document.getElementById('emailError').textContent = "Please enter a valid email address.";
-        isValid = false;
-    }
-
-    if (!passwordRegex.test(password)) {
-        document.getElementById('passwordError').textContent = "Password must be at least 6 characters long.";
-        isValid = false;
-    }
-
-    if(isValid){
-        sessionStorage.setItem('name', name);
-        sessionStorage.setItem('email', email);
-        sessionStorage.setItem('password', password)
-
-        alert("signup successfull!!");
-    }
-    });
-
-
-</script>
 </html>
