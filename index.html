@@ -23,7 +23,7 @@
             </div>
 
             <ul class="nav-links">
-                <li class="nav-list"><a href="home.html">Home</a></li>
+                <li class="nav-list"><a href="index.html">Home</a></li>
                 <li class="nav-list"><a href="our-service.html">Our Services</a></li>
                 <li class="nav-list"><a href="contact.html">Contact</a></li>
             </ul>
@@ -237,5 +237,22 @@
         root.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
     });
+
+
+
+  const currentPath = window.location.pathname.split("/").pop();
+
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute("href");
+
+    if (linkPath === currentPath || 
+        (currentPath === "" && linkPath === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+
+
 </script>
 </html>
